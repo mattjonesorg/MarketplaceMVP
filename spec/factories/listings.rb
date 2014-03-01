@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :listing do
     cardnumber "MyString"
     price "9.99"
-    value "9.99"
-    status false
+    value "10.00"
+    status "Submitted"
     brand nil
      ""
   end
