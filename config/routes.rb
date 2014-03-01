@@ -1,11 +1,13 @@
 MarketplaceMVP::Application.routes.draw do
+  
+  scope :public do
+      get "/listings" => "listings#index"
+  end
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  #namespace :api do
-  #  resources :listings, :defaults=>{:format=>:json}
-  #end
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
