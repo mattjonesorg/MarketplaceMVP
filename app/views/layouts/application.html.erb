@@ -7,12 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<a ui-sref="public">Public</a>
+    <a ui-sref="seller">Seller</a>
+    <a ui-sref="admin">Admin</a>
+
 	<div ui-view>
 		<%= yield %>
 	</div>
 
-	<a ui-sref="public">Public</a>
-    <a ui-sref="seller">Seller</a>
-    <a ui-sref="admin">Admin</a>
 </body>
 </html>
