@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301060621) do
+ActiveRecord::Schema.define(version: 20140301063941) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140301060621) do
     t.string   "cardnumber"
     t.decimal  "price",      precision: 15, scale: 2
     t.decimal  "value",      precision: 15, scale: 2
-    t.boolean  "status"
+    t.string   "status",                              default: "Submitted"
     t.integer  "brand_id"
     t.datetime "created_at"
     t.datetime "updated_at"
