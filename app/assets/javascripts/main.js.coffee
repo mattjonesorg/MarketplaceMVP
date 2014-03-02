@@ -16,6 +16,12 @@
   $scope.listings = SellerListing.query()
 ]
 
+@marketplace.controller 'NewListingCtrl', ['$scope', '$state', 'SellerListing', ($scope, $state, SellerListing) -> 
+  $scope.update = () -> 
+    SellerListing.save($scope.listing)
+    $state.transitionTo('seller.listings')
+]
+
 @marketplace.controller 'HeaderCtrl', ['$scope', '$location', ($scope, $location) ->
 	$scope.isActive = (viewLocation) -> viewLocation == $location.path()
 ]
@@ -30,8 +36,17 @@
     }).
     state('seller', {
       url: '/seller',
+      templateUrl: '/templates/seller.html'
+    }).
+    state('seller.listings', {
+      url: '/listings',
       controller: 'SellerListingsCtrl',
-    	templateUrl: '/templates/seller.html'
+      templateUrl: '/templates/seller.listings.html'
+    }).
+    state('seller.new', {
+      url: '/new',
+      controller: 'SellerListingsCtrl',
+      templateUrl: '/templates/seller.new.html'
     }).
     state('admin', {
     	url: '/admin',

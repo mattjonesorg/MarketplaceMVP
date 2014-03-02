@@ -4,4 +4,8 @@ class SellerListingsController < ApplicationController
 
 		render json: @data, :include=>:brand
 	end
+
+	def new
+		logger.debug(params[:brand][:name])
+	end
 end

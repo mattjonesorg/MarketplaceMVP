@@ -1,0 +1,14 @@
+<h2>New Listing</h2>
+
+<div ng-controller="NewListingCtrl">
+	<form class="css-form">
+		Brand: <input type="text" ng-model="listing.brand.name" name="brandName" required/><br />
+		
+		Card Number: <input type="text" ng-model="listing.cardnumber" name="cardnumber" required /><br />
+		Value: <input type="number" ng-model="listing.value" name="value" min="10" step="0.01" required /><br />
+		Price: <input type="number" ng-model="listing.price" name="price" min="0.01" step="0.01" less-than="listing.value" required /><br />
+
+		<button ng-click="update(listing)" ng-disabled="form.$invalid || isUnchanged(listing)">Save</button></form>
+</div>
+
+<a ui-sref="seller.listings">Cancel</a>

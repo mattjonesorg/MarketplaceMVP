@@ -1,11 +1,5 @@
-<h1>My Listings</h1>
-<hr/>
-<a ui-sref="seller">New Listing</a>
-<div ui-view>
-  <div class="row row-padded {{listing.status | lowercase}}" ng-repeat="listing in listings">
-	  <div class="col-md-2">Brand: {{listing.brand.name}}</div>
-	  <div class="col-md-2">Value: {{listing.value | currency}}</div>
-	  <div class="col-md-2">Price {{listing.price | currency}}</div>
-	  <div class="col-md-2">Status {{listing.status}}</div>
-  </div>
-</div>
+<h1>Sellers</h1>
+<a ui-sref="seller.listings">My Listings</a>
+<a ui-sref="seller.new">New Listing</a>
+
+<div ui-view></div>

@@ -6,6 +6,7 @@ MarketplaceMVP::Application.routes.draw do
 
   scope :seller do
     get "/listings" => "seller_listings#index"
+    post "/listings" => "seller_listings#new"
   end
 
   get "welcome/index"
