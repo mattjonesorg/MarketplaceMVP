@@ -1,28 +1,15 @@
-== README
+== Notes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was a rather fun exercise.  Of note, I had never used angular.js or coffeescript before, and it has been seven years since I last touched Ruby.  Ruby is a lot more fun now that I have a better grasp of TDD than I did back then.
 
-Things you may want to cover:
+Alas though, I have other things to do.  There's plenty that I didn't have time for, but I did get through a lot in just under two days.
 
-* Ruby version
+The coolest feature I added was deduplication of brand names.  So, if you enter "starbucks" or "starBucks" or "StarBucks", if there's already a "Starbucks" in the system, the one that is there will be used.  The obvious downside here is that if the first entry has the wrong capitalization, all subsequent entries would use that.  There would need to be an admin service to validate new brand names.  However, the benefit here is pretty big too, because I'm sure that Starbucks would like to know data about who is buying their gift cards.  And with this, there could be a feature for admins to associate a logo with the brand, etc.
 
-* System dependencies
+I also really enjoyed using the server primarily for an API and doing more of the work in on the client side.  It makes for an extremely fast application with clear separation of concerns.  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Things I'd do next:
+* It looks like Angular has some pretty sweet testing capabilities.  I'd like to look at that.
+* I recognize that I need more experience in Rails controller testing, but I'm sure I can pick that up.
+* All the necessary validation occurs on the server.  Some validation occurs on the client, but uniqueness of card numbers and price < value only happens on the server.  In these cases, if you press F12 in chrome, you'll see a response that indicates error.  I just don't have time to parse that in angular.
+* The rest of the stories.
