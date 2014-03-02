@@ -18,7 +18,6 @@
 
 @marketplace.controller 'NewListingCtrl', ['$scope', '$state', 'SellerListing', ($scope, $state, SellerListing) -> 
   $scope.update = () -> 
-    SellerListing.save($scope.listing)
     $state.transitionTo('seller.listings')
 ]
 
