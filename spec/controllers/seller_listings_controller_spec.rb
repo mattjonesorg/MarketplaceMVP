@@ -1,7 +1,6 @@
-require "spec_helper"
+require 'spec_helper'
 
-describe ListingsController do
-
+describe SellerListingsController do
 	before :each do
 	    approved1 = FactoryGirl.create(:approved) 
 	    approved2 = FactoryGirl.create(:approved) 
@@ -14,13 +13,5 @@ describe ListingsController do
 	      expect(response).to be_success
 	      expect(response.status).to eq(200)
 	    end
-
-# I think the controller should have a test like this, but i have a lot more to do.
-		#it "should only return items with status approved" do
-		#    parsed_response = JSON.parse(response.body)
-		#    parsed_response.each do |listing|
-		#    	expect(listing["status"]).to eq("Approved")
-		#    end
-		#end
 	end
 end

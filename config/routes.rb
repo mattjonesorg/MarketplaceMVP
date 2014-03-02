@@ -4,6 +4,10 @@ MarketplaceMVP::Application.routes.draw do
       get "/listings" => "listings#index"
   end
 
+  scope :seller do
+    get "/listings" => "seller_listings#index"
+  end
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
