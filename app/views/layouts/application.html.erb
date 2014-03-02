@@ -5,13 +5,28 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<a ui-sref="public">Public</a>
-    <a ui-sref="seller">Seller</a>
-    <a ui-sref="admin">Admin</a>
+ 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Marketplace MVP</a>
+        </div>
+        <div class="collapse navbar-collapse" ng-controller="HeaderCtrl">
+          <ul class="nav navbar-nav">
+            <li ng-class="{ active: isActive('/public')}"><a ui-sref="public">Public</a></li>
+            <li ng-class="{ active: isActive('/seller')}"><a ui-sref="seller">Seller</a></li>
+            <li ng-class="{ active: isActive('/admin')}"><a ui-sref="admin">Admin</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+    
+    
 
-	<div ui-view>
+	<div class="container maincontent" ui-view>
 		<%= yield %>
 	</div>
 

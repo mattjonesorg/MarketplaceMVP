@@ -15,4 +15,5 @@
 //= require angular
 //= require angular-resource
 //= require angular-ui-router
+//= require ui-bootstrap
 //= require main

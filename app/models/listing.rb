@@ -2,18 +2,18 @@ class Listing < ActiveRecord::Base
   belongs_to :brand
 
   	validates :cardnumber, presence: true, uniqueness:true
-  	validates :price, :price, presence: true, numericality: {greater_than_or_equal_to: 0}
+  	validates :price, presence: true, numericality: {greater_than: 0}
+  	validates_numericality_of :price, less_than: ->(listing) { listing.value }
   	validates :value, presence: true, numericality: {greater_than_or_equal_to: 10}
 	validates_inclusion_of :status, :in => ["Submitted", "Approved", "Rejected", "Sold"]
-	validates_exclusion_of :status, :in => ["invalid value", "starbucks", "target", "home depot"]
 
-end
+	def self.only_approved() 
+		where(status: "Approved") 
+	end
 
-
-class PriceValidator < ActiveModel::Validator
-	def validate(record)
-		unless record.price < record.value
-			record.errors[:price] << "Price must be less than the value of the gift card"
-		end
+	#when we have logins, this method would accept a userid, for now see I in SOLID principles.
+	def self.get_seller_listings()
+		all
 	end
 end
+

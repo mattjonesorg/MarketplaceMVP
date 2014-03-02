@@ -1,9 +1,9 @@
-<h1>Public User</h1>
-<hr/>
+
+<h1>Listings</h1>
 <div ui-view>
-	 <li ng-repeat="listing in listings">
-        <h3>{{listing.brand.name}} ${{listing.value}}<small>(${{listing.price}})</small></h3>
-     </li>
-
-
+  <div class="row row-padded" ng-repeat="listing in listings">
+	  <div class="col-md-2">Brand: {{listing.brand.name}}</div>
+	  <div class="col-md-2">Value: {{listing.value | currency}}</div>
+	  <div class="col-md-2">Price {{listing.price | currency}}</div>
+  </div>
 </div>

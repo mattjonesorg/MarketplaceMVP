@@ -1,1 +1,13 @@
 @import "bootstrap";
+
+.maincontent {
+	padding-top: 60px;
+}
+
+.row-padded {
+  padding: 1em;
+  background-color: #F7F7F7;
+  border: 1px solid #DDD;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

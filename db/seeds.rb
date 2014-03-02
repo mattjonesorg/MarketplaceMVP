@@ -25,5 +25,6 @@ Listing.create([
 		{brand_id: 3, cardnumber: "HD123", status:"Approved", price: 20.00, value: 100.00 },
 		{brand_id: 3, cardnumber: "HD456", status:"Approved", price: 20.00, value: 50.00 },
 		{brand_id: 3, cardnumber: "HD789", status:"Approved", price: 20.00, value: 25.00 },
-		{brand_id: 4, cardnumber: "654321", status:"Approved", price: 20.00, value: 25.00 }
+		{brand_id: 4, cardnumber: "654321", status:"Approved", price: 20.00, value: 25.00 },
+		{brand_id: 5, cardnumber: "6543210", status:"Submitted", price: 20.00, value: 25.00 }
 	])
