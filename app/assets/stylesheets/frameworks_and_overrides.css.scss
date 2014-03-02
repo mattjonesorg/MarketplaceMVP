@@ -1,5 +1,24 @@
 @import "bootstrap";
 
+$rejected-color: #E9967A;
+$approved-color: #F7F7F7;
+$sold-color: #90EE90;
+$submitted-color: #EEE685;
+
+.approved {
+	background-color: $approved-color !important;
+}
+
+.rejected {
+	background-color: $rejected-color !important;
+}
+.submitted {
+	background-color: $submitted-color !important;
+}
+.sold {
+	background-color: $sold-color !important;
+}
+
 .maincontent {
 	padding-top: 60px;
 }
